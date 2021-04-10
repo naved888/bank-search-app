@@ -4,7 +4,8 @@ import "./BankDetails.css"
 
 function BankDetails() {
     let location = useLocation()
-    let data = location.data
+    let data = [] 
+    data = location.data
     console.log(data)
    
     if (data) {

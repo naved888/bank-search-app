@@ -234,7 +234,7 @@ function Home() {
     function redirectToDetails(data) {
         history.push({
             "pathname": `/${data.ifsc}`,
-            data: [data]
+            data: data
         })
     }
 
