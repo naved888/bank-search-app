@@ -32,7 +32,7 @@ function Home() {
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     let currentItems = showData.slice(indexOfFirstItem, indexOfLastItem);
-    console.log(typeof(currentItems))
+    console.log(currentItems)
     const renderPageNumbers = pages.map((number) => {
         if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
             return (
@@ -91,7 +91,7 @@ function Home() {
         if (localStorage.getItem(cityRow) === null) {
             setLoading(true);
             const res = await axios.get('https://vast-shore-74260.herokuapp.com/banks?city=' + cityName)
-            console.log(typeof(res))
+            console.log(res)
             setRowData(res.data)
             setshowData(res.data)
             setLoading(false);
@@ -101,6 +101,7 @@ function Home() {
             setRowData(JSON.parse(localStorage.getItem(cityRow)))
             console.log('localstorage fetched')
         }
+        
     }
 
     // fetching delhi data
@@ -233,7 +234,7 @@ function Home() {
     //route
     function redirectToDetails(data) {
         history.push({
-            "pathname": `/bank-search-app/${data.ifsc}`,
+            "pathname": `/${data.ifsc}`,
             data: [data]
         })
     }
@@ -248,6 +249,12 @@ function Home() {
         setshowData(items)
         return showData
     };
+
+   function assignVal(data) {
+    if(data.favorite === undefined) {
+        Object.assign(data, { favorite: false })
+    }
+   }
 
     return (
         <div className="container">
@@ -265,10 +272,10 @@ function Home() {
 
                         currentItems.map((data, index) => {
                             return (
-                                <div className="card-container" key={index}>
+                                <div className="card-container">
 
                                     <Card>
-                                        {(data.favorite === undefined) ? Object.assign(data, { favorite: false }) : console.log(data.favorite)}
+                                        {assignVal(data)}
                                         <Card.Header>
                                             <div className="d-flex justify-content-between">
                                                 {data.bank_name}

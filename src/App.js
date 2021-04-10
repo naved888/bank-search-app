@@ -10,10 +10,10 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/bank-search-app/">
+        <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/bank-search-app/:ifsc">
+        <Route path="/:ifsc">
           <BankDetails />
         </Route>
       </Switch>
