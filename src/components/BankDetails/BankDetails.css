@@ -1,0 +1,14 @@
+.values {
+  background-color: red;
+  padding: 10px;
+  color: aliceblue;
+  border: 1px solid gray;
+  border-radius: 27px;
+}
+.main {
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 27px;
+  box-shadow: 5px 10px #888888;
+  margin-top: 300px;
+}
