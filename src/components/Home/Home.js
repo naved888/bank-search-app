@@ -233,8 +233,8 @@ function Home() {
     //route
     function redirectToDetails(data) {
         history.push({
-            "pathname": `/${data.ifsc}`,
-            data: data
+            "pathname": `/bank-search-app/${data.ifsc}`,
+            data: [data]
         })
     }
 
