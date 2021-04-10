@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/bank-search-app/static/css/main.69abf038.chunk.css",
-    "main.js": "/bank-search-app/static/js/main.dd281667.chunk.js",
-    "main.js.map": "/bank-search-app/static/js/main.dd281667.chunk.js.map",
+    "main.js": "/bank-search-app/static/js/main.c3034dad.chunk.js",
+    "main.js.map": "/bank-search-app/static/js/main.c3034dad.chunk.js.map",
     "runtime-main.js": "/bank-search-app/static/js/runtime-main.d776a1b5.js",
     "runtime-main.js.map": "/bank-search-app/static/js/runtime-main.d776a1b5.js.map",
     "static/css/2.6b80fa1b.chunk.css": "/bank-search-app/static/css/2.6b80fa1b.chunk.css",
-    "static/js/2.83e975fe.chunk.js": "/bank-search-app/static/js/2.83e975fe.chunk.js",
-    "static/js/2.83e975fe.chunk.js.map": "/bank-search-app/static/js/2.83e975fe.chunk.js.map",
+    "static/js/2.04bdae57.chunk.js": "/bank-search-app/static/js/2.04bdae57.chunk.js",
+    "static/js/2.04bdae57.chunk.js.map": "/bank-search-app/static/js/2.04bdae57.chunk.js.map",
     "index.html": "/bank-search-app/index.html",
     "static/css/2.6b80fa1b.chunk.css.map": "/bank-search-app/static/css/2.6b80fa1b.chunk.css.map",
     "static/css/main.69abf038.chunk.css.map": "/bank-search-app/static/css/main.69abf038.chunk.css.map",
-    "static/js/2.83e975fe.chunk.js.LICENSE.txt": "/bank-search-app/static/js/2.83e975fe.chunk.js.LICENSE.txt"
+    "static/js/2.04bdae57.chunk.js.LICENSE.txt": "/bank-search-app/static/js/2.04bdae57.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d776a1b5.js",
     "static/css/2.6b80fa1b.chunk.css",
-    "static/js/2.83e975fe.chunk.js",
+    "static/js/2.04bdae57.chunk.js",
     "static/css/main.69abf038.chunk.css",
-    "static/js/main.dd281667.chunk.js"
+    "static/js/main.c3034dad.chunk.js"
   ]
 }
