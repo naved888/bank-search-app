@@ -1,11 +1,9 @@
 {
   "name": "bank-search-app",
-  "homepage": "http://naved888.github.io/bank-search-app/",
+  "homepage": "http://naved888.github.io/bank-search-app",
   "version": "0.1.1",
   "private": false,
   "dependencies": {
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
     "ant-design": "^1.0.0",
     "antd": "^4.15.0",
     "axios": "^0.21.1",
