@@ -1,13 +1,12 @@
-import { React } from 'react'
+import { React, useEffect } from 'react'
 import { useLocation } from "react-router-dom"
 import "./BankDetails.css"
 
-function BankDetails(props) {
+function BankDetails() {
     let location = useLocation()
-    let data = []
-    console.log(typeof (data))
-    console.log(location.data)
-    data.push(location.data)
+    let data = location.data
+    console.log(data)
+   
     if (data) {
         return (
             <div className="main container">
