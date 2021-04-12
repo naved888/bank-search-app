@@ -32,7 +32,6 @@ function Home() {
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     let currentItems = showData.slice(indexOfFirstItem, indexOfLastItem);
-    console.log(currentItems)
     const renderPageNumbers = pages.map((number) => {
         if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
             return (
@@ -91,17 +90,17 @@ function Home() {
         if (localStorage.getItem(cityRow) === null) {
             setLoading(true);
             const res = await axios.get('https://vast-shore-74260.herokuapp.com/banks?city=' + cityName)
-            console.log(res)
             setRowData(res.data)
             setshowData(res.data)
+            localStorage.setItem(cityRow, JSON.stringify(res.data))
+            localStorage.setItem(cityShow, JSON.stringify(res.data))
+
             setLoading(false);
-            console.log("fetch end")
         } else {
             setshowData(JSON.parse(localStorage.getItem(cityRow)))
             setRowData(JSON.parse(localStorage.getItem(cityRow)))
-            console.log('localstorage fetched')
         }
-        
+
     }
 
     // fetching delhi data
@@ -142,19 +141,15 @@ function Home() {
 
     function setItemPerPage5() {
         setitemsPerPage(5);
-        console.log(itemsPerPage)
     }
     function setItemPerPage10() {
         setitemsPerPage(10);
-        console.log(itemsPerPage)
     }
     function setItemPerPage15() {
         setitemsPerPage(15);
-        console.log(itemsPerPage)
     }
     function setItemPerPage20() {
         setitemsPerPage(20);
-        console.log(itemsPerPage)
     }
 
     //dropdown menu
@@ -211,7 +206,6 @@ function Home() {
         setRowData(rowData)
         const show = search(val)
         localStorage.setItem(cityShowData, JSON.stringify(show))
-        console.log("showData :", showData)
     }
 
     let debounceTimeout = 0;
@@ -241,7 +235,7 @@ function Home() {
 
     function search(text) {
         const items = rowData.filter((item) => {
-            if (item.bank_name.toLowerCase().includes(text.toLowerCase()) || item.ifsc.toLowerCase().includes(text.toLowerCase())) {
+            if (item.bank_name.toLowerCase().includes(text.toLowerCase()) || item.ifsc.toLowerCase().includes(text.toLowerCase()) || item.address.toLowerCase().includes(text.toLowerCase()) || item.branch.toLowerCase().includes(text.toLowerCase())) {
                 return item;
             }
             return null;
@@ -250,11 +244,11 @@ function Home() {
         return showData
     };
 
-   function assignVal(data) {
-    if(data.favorite === undefined) {
-        Object.assign(data, { favorite: false })
+    function assignVal(data) {
+        if (data.favorite === undefined) {
+            Object.assign(data, { favorite: false })
+        }
     }
-   }
 
     return (
         <div className="container">
